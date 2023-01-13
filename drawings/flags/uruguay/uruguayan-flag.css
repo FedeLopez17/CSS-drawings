@@ -1,0 +1,90 @@
+:root {
+  --flag-blue: #0038a8ff;
+  --flag-white: #ffffff;
+  --flag-yellow: #fcd116ff;
+  --flag-brown: #7b3f00ff;
+
+  --first-stripe-start: 0%;
+  --first-stripe-end: 11.1%;
+  --second-stripe-start: 11.1%;
+  --second-stripe-end: 22.2%;
+  --third-stripe-start: 22.2%;
+  --third-stripe-end: 33.3%;
+  --fourth-stripe-start: 33.3%;
+  --fourth-stripe-end: 44.4%;
+  --fifth-stripe-start: 44.4%;
+  --fifth-stripe-end: 55.5%;
+  --sixth-stripe-start: 55.5%;
+  --sixth-stripe-end: 66.6%;
+  --seventh-stripe-start: 66.6%;
+  --seventh-stripe-end: 77.7%;
+  --eigth-stripe-start: 77.7%;
+  --eigth-stripe-end: 88.8%;
+  --ninth-stripe-start: 88.8%;
+  --ninth-stripe-end: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+#flag {
+  position: relative;
+  aspect-ratio: 1.5/1;
+  width: min(900px, 95vmin);
+  box-shadow: 0 0 2px 0 dimgrey;
+  background-image: linear-gradient(
+    var(--flag-white) var(--first-stripe-start),
+    var(--flag-white) var(--first-stripe-end),
+    var(--flag-blue) var(--second-stripe-start),
+    var(--flag-blue) var(--second-stripe-end),
+    var(--flag-white) var(--third-stripe-start),
+    var(--flag-white) var(--third-stripe-end),
+    var(--flag-blue) var(--fourth-stripe-start),
+    var(--flag-blue) var(--fourth-stripe-end),
+    var(--flag-white) var(--fifth-stripe-start),
+    var(--flag-white) var(--fifth-stripe-end),
+    var(--flag-blue) var(--sixth-stripe-start),
+    var(--flag-blue) var(--sixth-stripe-end),
+    var(--flag-white) var(--seventh-stripe-start),
+    var(--flag-white) var(--seventh-stripe-end),
+    var(--flag-blue) var(--eigth-stripe-start),
+    var(--flag-blue) var(--eigth-stripe-end),
+    var(--flag-white) var(--ninth-stripe-start),
+    var(--flag-white) var(--ninth-stripe-end)
+  );
+}
+
+#flag::before {
+  content: "";
+  display: block;
+  aspect-ratio: 1/1;
+  height: var(--fifth-stripe-end);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--flag-white);
+}
+
+#flag::after {
+  content: "";
+  display: block;
+  aspect-ratio: 1/1;
+  height: var(--fifth-stripe-end);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* TODO: draw the sun here with gradients on the background */
+}
+
+@media (orientation: portrait) {
+  #flag {
+    transform: rotate(90deg);
+  }
+}
