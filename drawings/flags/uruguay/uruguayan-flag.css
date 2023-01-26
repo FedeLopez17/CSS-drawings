@@ -2,7 +2,7 @@
   --flag-blue: #0038a8ff;
   --flag-white: #ffffff;
   --flag-yellow: #fcd116ff;
-  --flag-brown: #7b3f00ff;
+  --football-shirt-color-uy: #6f9cde;
 
   --first-stripe-start: 0%;
   --first-stripe-end: 11.1%;
@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: var(--football-shirt-color-uy);
 }
 
 #flag {
@@ -71,16 +71,18 @@ body {
   background-color: var(--flag-white);
 }
 
+/* Sun */
 #flag::after {
+  border-radius: 50% / 50%;
   content: "";
   display: block;
   aspect-ratio: 1/1;
-  height: var(--fifth-stripe-end);
+  height: 40%;
   position: absolute;
   z-index: 1;
-  top: 0;
-  left: 0;
-  /* TODO: draw the sun here with gradients on the background */
+  top: 8%;
+  left: 5%;
+  background-color: var(--flag-yellow);
 }
 
 @media (orientation: portrait) {
